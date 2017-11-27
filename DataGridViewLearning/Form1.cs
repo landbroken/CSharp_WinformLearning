@@ -19,6 +19,11 @@ namespace DataGridViewLearning
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             GetCurrentCell();
@@ -30,22 +35,32 @@ namespace DataGridViewLearning
             SelectNextColumnCell(0);
         }
 
-
         private void button3_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
             foreach (var item in m_GPS)
             {
-                //if (item!=null)
-                //{
-                //    textBox1.Text += item.Longtitude + " , ";
-                //    textBox1.Text += item.Latitude + " , ";
-                //    textBox1.Text += item.Velocity +Environment.NewLine;
-                //}
                 textBox1.Text += item.Longtitude + " , ";
                 textBox1.Text += item.Latitude + " , ";
                 textBox1.Text += item.Velocity + Environment.NewLine;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int len = m_GPS.Length;
+            for (int i = 0; i < len; i++)
+            {
+                m_GPS[i] = new GPSData(i + 1.1, i + 2.2, i + 3.3);
+                SetCell(0, i, m_GPS[i].Longtitude);
+                SetCell(1, i, m_GPS[i].Latitude);
+                SetCell(2, i, m_GPS[i].Velocity);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            m_GPS = ResizeGPS(m_GPS);
         }
 
         private void GetCurrentCell()
@@ -71,12 +86,26 @@ namespace DataGridViewLearning
             string strOut = "";
             try
             {
+                if (Column>dataGridView1.ColumnCount)
+                {
+                    //dataGridView1.CurrentCell will throw ArgumentOutOfRangeException
+                }
+                //add new row
+                //only show the last one value，why？
+                //if (Row >= dataGridView1.RowCount)
+                //{
+                //    dataGridView1.Rows.Add(Row - dataGridView1.RowCount + 1);
+                //}
+                //this work right
+                if (Row + 1 >= dataGridView1.RowCount)
+                {
+                    dataGridView1.Rows.Add(Row - dataGridView1.RowCount + 2);
+                }
                 dataGridView1.CurrentCell = dataGridView1[Column, Row];
                 dataGridView1.CurrentCell.Value = NewValue;
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                //越界异常
                 string strErr = ex.Message;
                 MessageBox.Show("No such cell,out of range!");
             }
@@ -106,10 +135,6 @@ namespace DataGridViewLearning
                 GPSData.ColumnNum curColumn = (GPSData.ColumnNum)dataGridView1.CurrentCell.ColumnIndex;
                 int curRow = dataGridView1.CurrentCell.RowIndex;
                 double curValue = Convert.ToDouble(dataGridView1.CurrentCell.Value);
-                //if (m_GPS[curRow]==null)
-                //{
-                //    m_GPS[curRow] = new GPSData();
-                //}
                 switch (curColumn)
                 {
                     case GPSData.ColumnNum.Longtitude:
@@ -132,5 +157,17 @@ namespace DataGridViewLearning
                 string strErr = ex.Message;
             }
         }
+
+        private GPSData[] ResizeGPS(GPSData[] GPSIn)
+        {
+            GPSData[] tmp = new GPSData[GPSIn.Length + 1000];
+            for (int i = 0; i < GPSIn.Length; i++)
+            {
+                tmp[i] = GPSIn[i];
+            }
+
+            return tmp;
+        }
+
     }
 }

@@ -12,6 +12,8 @@ namespace DataGridViewLearning
 {
     public partial class Form1 : Form
     {
+        GPSData[] m_GPS = new GPSData[10];
+
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +28,24 @@ namespace DataGridViewLearning
         private void button2_Click(object sender, EventArgs e)
         {
             SelectNextColumnCell(0);
+        }
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            foreach (var item in m_GPS)
+            {
+                //if (item!=null)
+                //{
+                //    textBox1.Text += item.Longtitude + " , ";
+                //    textBox1.Text += item.Latitude + " , ";
+                //    textBox1.Text += item.Velocity +Environment.NewLine;
+                //}
+                textBox1.Text += item.Longtitude + " , ";
+                textBox1.Text += item.Latitude + " , ";
+                textBox1.Text += item.Velocity + Environment.NewLine;
+            }
         }
 
         private void GetCurrentCell()
@@ -77,6 +97,40 @@ namespace DataGridViewLearning
             if (column > this.dataGridView1.ColumnCount - 1)
                 column = 0;
             this.dataGridView1.CurrentCell = this.dataGridView1[column, Row];
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                GPSData.ColumnNum curColumn = (GPSData.ColumnNum)dataGridView1.CurrentCell.ColumnIndex;
+                int curRow = dataGridView1.CurrentCell.RowIndex;
+                double curValue = Convert.ToDouble(dataGridView1.CurrentCell.Value);
+                //if (m_GPS[curRow]==null)
+                //{
+                //    m_GPS[curRow] = new GPSData();
+                //}
+                switch (curColumn)
+                {
+                    case GPSData.ColumnNum.Longtitude:
+                        m_GPS[curRow].Longtitude = curValue;
+                        break;
+                    case GPSData.ColumnNum.Latitude:
+                        m_GPS[curRow].Latitude = curValue;
+                        break;
+                    case GPSData.ColumnNum.Velocity:
+                        m_GPS[curRow].Velocity = curValue;
+                        break;
+                    default:
+                        //应该不可能访问到这
+                        throw new ArgumentOutOfRangeException();
+                        //break;
+                }
+            }
+            catch (Exception ex)
+            {
+                string strErr = ex.Message;
+            }
         }
     }
 }

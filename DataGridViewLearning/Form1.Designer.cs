@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Longtitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Latitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Velocity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.Longitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Latitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Velocity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +45,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Longtitude,
+            this.Longitude,
             this.Latitude,
             this.Velocity});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
@@ -54,21 +54,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(545, 404);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-            // 
-            // Longtitude
-            // 
-            this.Longtitude.HeaderText = "Longtitude";
-            this.Longtitude.Name = "Longtitude";
-            // 
-            // Latitude
-            // 
-            this.Latitude.HeaderText = "Latitude";
-            this.Latitude.Name = "Latitude";
-            // 
-            // Velocity
-            // 
-            this.Velocity.HeaderText = "Velocity";
-            this.Velocity.Name = "Velocity";
             // 
             // textBox1
             // 
@@ -128,6 +113,21 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // Longitude
+            // 
+            this.Longitude.HeaderText = "Longitude";
+            this.Longitude.Name = "Longitude";
+            // 
+            // Latitude
+            // 
+            this.Latitude.HeaderText = "Latitude";
+            this.Latitude.Name = "Latitude";
+            // 
+            // Velocity
+            // 
+            this.Velocity.HeaderText = "Velocity";
+            this.Velocity.Name = "Velocity";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -156,11 +156,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Longtitude;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Latitude;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Velocity;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Longitude;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Latitude;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Velocity;
     }
 }
 

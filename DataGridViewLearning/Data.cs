@@ -7,20 +7,20 @@ namespace DataGridViewLearning
 {
     struct GPSData
     {
-        private double longtitude;
+        private double longitude;
         private double latitude;
         private double velocity;
 
-        public double Longtitude
+        public double Longitude
         {
             get
             {
-                return longtitude;
+                return longitude;
             }
 
             set
             {
-                longtitude = value;
+                longitude = value;
             }
         }
 
@@ -52,12 +52,12 @@ namespace DataGridViewLearning
 
         public enum ColumnNum
         {
-            Longtitude=0, Latitude=1, Velocity=2
+            Longitude=0, Latitude=1, Velocity=2
         }
 
-        public GPSData(double LongtitudeIn,double LatitudeIn, double VelocityIn)
+        public GPSData(double LongitudeIn,double LatitudeIn, double VelocityIn)
         {
-            longtitude = LongtitudeIn;
+            longitude = LongitudeIn;
             latitude = LatitudeIn;
             velocity = VelocityIn;
         }

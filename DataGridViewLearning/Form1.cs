@@ -40,7 +40,7 @@ namespace DataGridViewLearning
             textBox1.Text = "";
             foreach (var item in m_GPS)
             {
-                textBox1.Text += item.Longtitude + " , ";
+                textBox1.Text += item.Longitude + " , ";
                 textBox1.Text += item.Latitude + " , ";
                 textBox1.Text += item.Velocity + Environment.NewLine;
             }
@@ -52,7 +52,7 @@ namespace DataGridViewLearning
             for (int i = 0; i < len; i++)
             {
                 m_GPS[i] = new GPSData(i + 1.1, i + 2.2, i + 3.3);
-                SetCell(0, i, m_GPS[i].Longtitude);
+                SetCell(0, i, m_GPS[i].Longitude);
                 SetCell(1, i, m_GPS[i].Latitude);
                 SetCell(2, i, m_GPS[i].Velocity);
             }
@@ -137,8 +137,8 @@ namespace DataGridViewLearning
                 double curValue = Convert.ToDouble(dataGridView1.CurrentCell.Value);
                 switch (curColumn)
                 {
-                    case GPSData.ColumnNum.Longtitude:
-                        m_GPS[curRow].Longtitude = curValue;
+                    case GPSData.ColumnNum.Longitude:
+                        m_GPS[curRow].Longitude = curValue;
                         break;
                     case GPSData.ColumnNum.Latitude:
                         m_GPS[curRow].Latitude = curValue;

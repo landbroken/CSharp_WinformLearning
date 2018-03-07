@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Longitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Latitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Velocity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.Longitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Latitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Velocity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +54,21 @@
             this.dataGridView1.Size = new System.Drawing.Size(545, 404);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            // 
+            // Longitude
+            // 
+            this.Longitude.HeaderText = "Longitude";
+            this.Longitude.Name = "Longitude";
+            // 
+            // Latitude
+            // 
+            this.Latitude.HeaderText = "Latitude";
+            this.Latitude.Name = "Latitude";
+            // 
+            // Velocity
+            // 
+            this.Velocity.HeaderText = "Velocity";
+            this.Velocity.Name = "Velocity";
             // 
             // textBox1
             // 
@@ -112,21 +127,6 @@
             this.button5.Text = "Resize GPS data";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // Longitude
-            // 
-            this.Longitude.HeaderText = "Longitude";
-            this.Longitude.Name = "Longitude";
-            // 
-            // Latitude
-            // 
-            this.Latitude.HeaderText = "Latitude";
-            this.Latitude.Name = "Latitude";
-            // 
-            // Velocity
-            // 
-            this.Velocity.HeaderText = "Velocity";
-            this.Velocity.Name = "Velocity";
             // 
             // Form1
             // 

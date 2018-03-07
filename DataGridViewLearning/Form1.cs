@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -21,13 +22,17 @@ namespace DataGridViewLearning
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //获取程序集自动增加的版本号和编译时间
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
+            var GVersion = version.ToString();
+            var GDateTime = System.IO.File.GetLastWriteTime(this.GetType().Assembly.Location).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GetCurrentCell();
-            SetCell(1, 2, "new value");
+            //GetCurrentCell();
+            //SetCell(1, 2, "new value");
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -168,6 +173,5 @@ namespace DataGridViewLearning
 
             return tmp;
         }
-
     }
 }

@@ -1,8 +1,8 @@
 G:\mission\CSharpLearning\CSharp_WinformLearning\DataGridViewLearning\bin\Debug\DataGridViewLearning.exe
 G:\mission\CSharpLearning\CSharp_WinformLearning\DataGridViewLearning\bin\Debug\DataGridViewLearning.pdb
-G:\mission\CSharpLearning\CSharp_WinformLearning\DataGridViewLearning\obj\Debug\DataGridViewLearning.csprojResolveAssemblyReference.cache
 G:\mission\CSharpLearning\CSharp_WinformLearning\DataGridViewLearning\obj\Debug\DataGridViewLearning.Form1.resources
 G:\mission\CSharpLearning\CSharp_WinformLearning\DataGridViewLearning\obj\Debug\DataGridViewLearning.Properties.Resources.resources
 G:\mission\CSharpLearning\CSharp_WinformLearning\DataGridViewLearning\obj\Debug\DataGridViewLearning.csproj.GenerateResource.Cache
 G:\mission\CSharpLearning\CSharp_WinformLearning\DataGridViewLearning\obj\Debug\DataGridViewLearning.exe
 G:\mission\CSharpLearning\CSharp_WinformLearning\DataGridViewLearning\obj\Debug\DataGridViewLearning.pdb
+G:\mission\CSharpLearning\CSharp_WinformLearning\DataGridViewLearning\obj\Debug\DataGridViewLearning.csprojResolveAssemblyReference.cache
